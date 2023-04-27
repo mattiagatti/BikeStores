@@ -26,6 +26,7 @@ CREATE TABLE products (
 	category_id INT NOT NULL,
 	model_year SMALLINT NOT NULL,
 	list_price DECIMAL(10, 2) NOT NULL,
+	cost_price DECIMAL(10, 2) DEFAULT 0.01,
 	FOREIGN KEY (category_id) REFERENCES categories (category_id) ON DELETE CASCADE, -- ON UPDATE CASCADE,
 	FOREIGN KEY (brand_id) REFERENCES brands (brand_id) ON DELETE CASCADE -- ON UPDATE CASCADE
 );
@@ -62,6 +63,10 @@ CREATE TABLE staffs (
 	active NUMBER(1) NOT NULL,
 	store_id INT NOT NULL,
 	manager_id INT,
+	role VARCHAR2(50) NOT NULL,
+	-- Role: "SALES"; "WAREHOUSE"
+	role_level NUMBER(1) DEFAULT 1 NOT NULL,
+	-- Role level: 1-4
 	FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE, -- ON UPDATE CASCADE,
 	FOREIGN KEY (manager_id) REFERENCES staffs (staff_id) -- ON DELETE NO ACTION, ON UPDATE NO ACTION
 );
@@ -76,6 +81,7 @@ CREATE TABLE orders (
 	shipped_date DATE,
 	store_id INT NOT NULL,
 	staff_id INT NOT NULL,
+	address VARCHAR2(255) DEFAULT 'Foo address',
 	FOREIGN KEY (customer_id) REFERENCES customers (customer_id) ON DELETE CASCADE, -- ON UPDATE CASCADE,
 	FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE, -- ON UPDATE CASCADE,
 	FOREIGN KEY (staff_id) REFERENCES staffs (staff_id) -- ON DELETE NO ACTION ON UPDATE NO ACTION

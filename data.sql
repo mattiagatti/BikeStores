@@ -2743,16 +2743,26 @@ INSERT INTO stocks(store_id, product_id, quantity) VALUES(3,313,0);
 
 -- STAFFS
 
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(1,'Fabiola','Jackson','fabiola.jackson@bikes.shop','(831) 555-5554',1,1,NULL);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(2,'Mireya','Copeland','mireya.copeland@bikes.shop','(831) 555-5555',1,1,1);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(3,'Genna','Serrano','genna.serrano@bikes.shop','(831) 555-5556',1,1,2);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(4,'Virgie','Wiggins','virgie.wiggins@bikes.shop','(831) 555-5557',1,1,2);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(5,'Jannette','David','jannette.david@bikes.shop','(516) 379-4444',1,2,1);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(6,'Marcelene','Boyer','marcelene.boyer@bikes.shop','(516) 379-4445',1,2,5);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(7,'Venita','Daniel','venita.daniel@bikes.shop','(516) 379-4446',1,2,5);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(8,'Kali','Vargas','kali.vargas@bikes.shop','(972) 530-5555',1,3,1);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(9,'Layla','Terrell','layla.terrell@bikes.shop','(972) 530-5556',1,3,7);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES(10,'Bernardine','Houston','bernardine.houston@bikes.shop','(972) 530-5557',1,3,7);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(1,'Fabiola','Jackson','fabiola.jackson@bikes.shop','(831) 555-5554',1,1,NULL,'SALES',4);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(2,'Mireya','Copeland','mireya.copeland@bikes.shop','(831) 555-5555',1,1,1,'SALES',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(3,'Genna','Serrano','genna.serrano@bikes.shop','(831) 555-5556',1,1,2,'SALES',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(4,'Virgie','Wiggins','virgie.wiggins@bikes.shop','(831) 555-5557',1,1,2,'SALES',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(5,'Jannette','David','jannette.david@bikes.shop','(516) 379-4444',1,2,1,'SALES',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(6,'Marcelene','Boyer','marcelene.boyer@bikes.shop','(516) 379-4445',1,2,5,'SALES',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(7,'Venita','Daniel','venita.daniel@bikes.shop','(516) 379-4446',1,2,5,'SALES',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(8,'Kali','Vargas','kali.vargas@bikes.shop','(972) 530-5555',1,3,1,'SALES',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(9,'Layla','Terrell','layla.terrell@bikes.shop','(972) 530-5556',1,3,7,'SALES',1);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(10,'Bernardine','Houston','bernardine.houston@bikes.shop','(972) 530-5557',1,3,7,'WAREHOUSE',1);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(11,'Holly','Cox','holly.cox@bikes.shop','(831) 555-5554',1,1,NULL,'WAREHOUSE',4);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(12,'Eve','Randall','eve.randall@bikes.shop','(831) 555-5555',1,1,1,'WAREHOUSE',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(13,'Madeleine','Norton','madeleine.norton@bikes.shop','(831) 555-5556',1,1,2,'WAREHOUSE',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(14,'Gabriel','Howells','gabriel.howells@bikes.shop','(831) 555-5557',1,1,2,'WAREHOUSE',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(15,'Isobel','Price','isobel.price@bikes.shop','(516) 379-4444',1,2,1,'WAREHOUSE',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(16,'Zoe','Mellor','zoe.mellor@bikes.shop','(516) 379-4445',1,2,5,'WAREHOUSE',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(17,'Charlie','Knight','charlie.knight@bikes.shop','(516) 379-4446',1,2,5,'WAREHOUSE',2);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(18,'Elizabeth','Edwards','elizabeth.edwards@bikes.shop','(972) 530-5555',1,3,1,'WAREHOUSE',3);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(19,'Tom','Wong','tom.wong@bikes.shop','(972) 530-5556',1,3,7,'WAREHOUSE',1);
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(20,'Harrison','Ingram','harrison.ingram@bikes.shop','(972) 530-5557',1,3,7,'WAREHOUSE',1);
 
 -- ORDERS
 
