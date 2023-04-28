@@ -67,6 +67,7 @@ CREATE TABLE staffs (
 	-- Role: "SALES"; "WAREHOUSE"
 	role_level NUMBER(1) DEFAULT 1 NOT NULL,
 	-- Role level: 1-4
+	salary NUMBER(10) DEFAULT 1000 NOT NULL,
 	FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE, -- ON UPDATE CASCADE,
 	FOREIGN KEY (manager_id) REFERENCES staffs (staff_id) -- ON DELETE NO ACTION, ON UPDATE NO ACTION
 );
