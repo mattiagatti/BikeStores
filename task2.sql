@@ -40,7 +40,7 @@ WHERE customer_id = 1
 ORDER BY order_date;
 
 -- customer1 is the customer with customer_id equals to 1
-GRANT SELECT ON ORDERS_CUSTOMER_1 TO customer1;
+GRANT SELECT ON ORDERS_CUSTOMER_1 TO customers1;
 
 -------------------------------------------------------------
 
@@ -61,7 +61,7 @@ GRANT SELECT ON PRODUCTS TO salesman4;
 CREATE VIEW STOCKS_STORE_1 AS
 SELECT p.product_id, p.product_name, p.brand_id, p.category_id, p.model_year, p.list_price, s.quantity
 FROM STOCKS s
-JOIN PRODUCT p ON s.product_id = p.product_id
+JOIN PRODUCTS p ON s.product_id = p.product_id
 WHERE s.store_id = 1;
 
 GRANT SELECT ON STOCKS_STORE_1 TO salesman1;
