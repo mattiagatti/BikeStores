@@ -2753,7 +2753,7 @@ INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(8,'Kali','Vargas','kali.vargas@bikes.shop','(972) 530-5555',1,3,1,'SALES',3);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(9,'Layla','Terrell','layla.terrell@bikes.shop','(972) 530-5556',1,3,7,'SALES',1);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(10,'Bernardine','Houston','bernardine.houston@bikes.shop','(972) 530-5557',1,3,7,'WAREHOUSE',1);
-INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(11,'Holly','Cox','holly.cox@bikes.shop','(831) 555-5554',1,1,NULL,'WAREHOUSE',4);
+-- INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(11,'Holly','Cox','holly.cox@bikes.shop','(831) 555-5554',1,1,NULL,'WAREHOUSE',4);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(12,'Eve','Randall','eve.randall@bikes.shop','(831) 555-5555',1,1,1,'WAREHOUSE',3);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(13,'Madeleine','Norton','madeleine.norton@bikes.shop','(831) 555-5556',1,1,2,'WAREHOUSE',2);
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, role, role_level) VALUES(14,'Gabriel','Howells','gabriel.howells@bikes.shop','(831) 555-5557',1,1,2,'WAREHOUSE',2);
