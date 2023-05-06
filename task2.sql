@@ -12,9 +12,8 @@ WHERE active = 1
 
 -- salesman1 is a junior employee that works in the store 1
 GRANT SELECT ON STAFF_INFO_STORE_1 TO salesman1;
-
--- salesman4 is a manager
-GRANT SELECT ON STAFFS TO salesman4;
+-- salesman3 is a manager
+GRANT SELECT ON STAFFS TO salesman3;
 
 ------------------------------------------------------------
 
@@ -52,7 +51,7 @@ FROM PRODUCTS
 ORDER BY product_name;
 
 GRANT SELECT ON PRODUCT_WO_COST TO salesman1;
-GRANT SELECT ON PRODUCTS TO salesman4;
+GRANT SELECT ON PRODUCTS TO salesman3;
 
 -------------------------------------------------------------
 
@@ -65,6 +64,8 @@ JOIN PRODUCTS p ON s.product_id = p.product_id
 WHERE s.store_id = 1;
 
 GRANT SELECT ON STOCKS_STORE_1 TO salesman1;
+-- salesman2 is a senior salesman
+GRANT SELECT ON STOCKS TO salesman2;
 
 --------------------------------------------------------------
 
