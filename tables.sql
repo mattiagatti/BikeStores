@@ -63,8 +63,8 @@ CREATE TABLE staffs (
 	active NUMBER(1) NOT NULL,
 	store_id INT NOT NULL,
 	manager_id INT,
-	role VARCHAR2(50) NOT NULL,
-	-- Role: "SALES"; "WAREHOUSE"
+	department VARCHAR2(50),
+	-- department: "SALES"; "WAREHOUSE"
 	role_level NUMBER(1) DEFAULT 1 NOT NULL,
 	-- Role level: 1-4
 	salary NUMBER(10) DEFAULT 1000 NOT NULL,

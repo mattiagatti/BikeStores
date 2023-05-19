@@ -1,6 +1,8 @@
 # BikeStores
 
-Initialization:
-1. Execute *users.sql*
-2. Enable Web Access to each user
-3. Execute *tables.sql* and *data.sql*
+- Task1: Database
+- Task2: Discretionary Access Control (DAC)
+- Task3: Role Based Access Control (RBAC)
+- Task4: Virtual Private Database (VPD) Part 1
+- Task5: Virtual Private Database (VPD) Part 2
+- Task6: Oracle Label Security (OLS)
