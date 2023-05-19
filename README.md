@@ -1,8 +1,8 @@
 # BikeStores
 
-- Task1: Database
-- Task2: Discretionary Access Control (DAC)
-- Task3: Role Based Access Control (RBAC)
+- [Task1](task1.md): Database
+- [Task2](task2.md): Discretionary Access Control (DAC)
+- [Task3](task3.md): Role Based Access Control (RBAC)
 - Task4: Virtual Private Database (VPD) Part 1
-- Task5: Virtual Private Database (VPD) Part 2
-- Task6: Oracle Label Security (OLS)
+- [Task5](task5.md): Virtual Private Database (VPD) Part 2
+- [Task6](task6.md): Oracle Label Security (OLS)
