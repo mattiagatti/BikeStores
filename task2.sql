@@ -108,7 +108,7 @@ ORDER BY product_name;
 -- juniors and seniors
 GRANT SELECT ON PRODUCT_WO_COST TO
     genna.serrano, virgie.wiggins, madeleine.norton, gabriel.howells,
-    marcelene.boyer, venita.daniel, zoe.mellor, charlie.knight;
+        marcelene.boyer, venita.daniel, zoe.mellor, charlie.knight;
 
 -- managers
 GRANT SELECT ON PRODUCTS TO
@@ -121,13 +121,13 @@ GRANT SELECT ON PRODUCTS TO
 CREATE VIEW STOCKS_STORE_1 AS
 SELECT p.product_id, p.product_name, p.brand_id, p.category_id, p.model_year, p.list_price, s.quantity
 FROM STOCKS s
-JOIN PRODUCTS p ON s.product_id = p.product_id
+         JOIN PRODUCTS p ON s.product_id = p.product_id
 WHERE s.store_id = 1;
 
 CREATE VIEW STOCKS_STORE_2 AS
 SELECT p.product_id, p.product_name, p.brand_id, p.category_id, p.model_year, p.list_price, s.quantity
 FROM STOCKS s
-JOIN PRODUCTS p ON s.product_id = p.product_id
+         JOIN PRODUCTS p ON s.product_id = p.product_id
 WHERE s.store_id = 2;
 
 -- juniors store 1
@@ -141,7 +141,7 @@ GRANT SELECT ON STOCKS_STORE_2 TO
 -- seniors and above
 GRANT SELECT ON STOCKS TO
     fabiola.jackson, mireya.copeland, genna.serrano, eve.randall, madeleine.norton,
-    jannette.david, marcelene.boyer, isobel.price, zoe.mellor;
+        jannette.david, marcelene.boyer, isobel.price, zoe.mellor;
 
 --------------------------
 -- New products policy --
@@ -150,10 +150,10 @@ GRANT SELECT ON STOCKS TO
 -- warehousemen
 GRANT SELECT, UPDATE, INSERT ON CATEGORIES TO
     eve.randall, madeleine.norton, gabriel.howells,
-    isobel.price, zoe.mellor, charlie.knight;
+        isobel.price, zoe.mellor, charlie.knight;
 GRANT SELECT, UPDATE, INSERT ON BRANDS TO
     eve.randall, madeleine.norton, gabriel.howells,
-    isobel.price, zoe.mellor, charlie.knight;
+        isobel.price, zoe.mellor, charlie.knight;
 GRANT SELECT, UPDATE, INSERT ON PRODUCTS TO
     eve.randall, madeleine.norton, gabriel.howells,
-    isobel.price, zoe.mellor, charlie.knight;
+        isobel.price, zoe.mellor, charlie.knight;
