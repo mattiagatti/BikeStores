@@ -33,7 +33,7 @@ GRANT CUSTOMER TO debra.burks, kasha.todd;
 
 ---------------------
 -- Junior Salesman --
-----------------------
+---------------------
 
 CREATE VIEW PRODUCT_WO_COST AS
 SELECT product_id, product_name, brand_id, category_id, model_year, list_price
@@ -51,7 +51,7 @@ GRANT SELECT ON CUSTOMER_INFO TO JUNIOR_SALESMAN;
 
 ---------------------
 -- Senior Salesman --
-----------------------
+---------------------
 
 CREATE VIEW STAFF_SALE_ACT AS
 SELECT staff_id, first_name, last_name, email, phone, store_id, manager_id

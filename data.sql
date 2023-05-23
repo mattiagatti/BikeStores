@@ -5628,6 +5628,9 @@ VALUES (3, 313, 0);
 
 -- STAFFS
 
+-- admin
+INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, department, role_level)
+VALUES (0, 'ADMIN', 'ADMIN', 'admin@bikes.shop', '(111) 111-1111', 1, 1, NULL, NULL, 4);
 -- top manager
 INSERT INTO staffs(staff_id, first_name, last_name, email, phone, active, store_id, manager_id, department, role_level)
 VALUES (1, 'Fabiola', 'Jackson', 'fabiola_jackson@bikes.shop', '(831) 555-5554', 1, 1, NULL, NULL, 4);
