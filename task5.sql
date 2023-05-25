@@ -84,6 +84,42 @@ SYS.DBMS_RLS.ADD_POLICY
 END;
 /
 
+-----------------
+-- Mask salary --
+-----------------
+
+CREATE OR REPLACE FUNCTION mask_salary(
+    schema_var VARCHAR2,
+    table_var VARCHAR2)
+RETURN VARCHAR2
+IS
+    return_val VARCHAR2(400);
+    role_level STAFFS.role_level% TYPE;
+    BEGIN
+    role_level := SYS_CONTEXT('staff_ctx', 'role_level');
+    IF role_level > 2 THEN
+        return_val := '1=1';
+    ELSE
+        return_val := 'salary = NULL';
+    END IF;
+RETURN return_val;
+END mask_salary;
+/
+
+BEGIN
+SYS.DBMS_RLS.ADD_POLICY
+(
+    OBJECT_SCHEMA => 'ADMIN',
+    OBJECT_NAME => 'STAFFS',
+    POLICY_NAME => 'VPD_mask_salary',
+    FUNCTION_SCHEMA => 'ADMIN',
+    POLICY_FUNCTION => 'mask_salary',
+    SEC_RELEVANT_COLS => 'salary',
+    SEC_RELEVANT_COLS_OPT => dbms_rls.ALL_ROWS
+);
+END;
+/
+
 ---------------------
 -- Assigned orders --
 ---------------------
