@@ -44,7 +44,7 @@ BEGIN
 EXCEPTION
     WHEN OTHERS THEN dbms_output.put_line('EXCEPTION_OTHERS');
 END;
-
+/
 -------------------
 -- Staff privacy --
 -------------------

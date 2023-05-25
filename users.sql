@@ -1,3 +1,7 @@
+--------------------
+--  CREATE USERS  --
+--------------------
+
 -- top manager
 CREATE USER fabiola_jackson IDENTIFIED BY Pwd_123456_pwd;
 

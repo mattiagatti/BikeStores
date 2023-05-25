@@ -35,7 +35,7 @@ GRANT CUSTOMER TO debra_burks, kasha_todd;
 -- Junior Salesman --
 ---------------------
 
-CREATE VIEW PRODUCT_WO_COST AS
+CREATE OR REPLACE VIEW PRODUCT_WO_COST AS
 SELECT product_id, product_name, brand_id, category_id, model_year, list_price
 FROM ADMIN.PRODUCTS
 ORDER BY product_name;
