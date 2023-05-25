@@ -20,15 +20,15 @@ WHERE active = 1
 
 -- juniors and seniors store 1
 GRANT SELECT ON STAFF_INFO_STORE_1 TO
-    genna.serrano, virgie.wiggins, madeleine.norton, gabriel.howells;
+    genna_serrano, virgie_wiggins, madeleine_norton, gabriel_howells;
 
 -- juniors and seniors store 2
 GRANT SELECT ON STAFF_INFO_STORE_2 TO
-    marcelene.boyer, venita.daniel, zoe.mellor, charlie.knight;
+    marcelene_boyer, venita_daniel, zoe_mellor, charlie_knight;
 
 -- managers
 GRANT SELECT ON STAFFS TO
-    fabiola.jackson, mireya.copeland, eve.randall, jannette.david, isobel.price;
+    fabiola_jackson, mireya_copeland, eve_randall, jannette_david, isobel_price;
 
 ----------------------------
 -- Assigned orders policy --
@@ -70,12 +70,12 @@ FROM ORDERS
 WHERE staff_id = 10
 ORDER BY order_date;
 
-GRANT SELECT ON ORDERS_SALESMAN_2 TO mireya.copeland;
-GRANT SELECT ON ORDERS_SALESMAN_3 TO genna.serrano;
-GRANT SELECT ON ORDERS_SALESMAN_4 TO virgie.wiggins;
-GRANT SELECT ON ORDERS_SALESMAN_8 TO jannette.david;
-GRANT SELECT ON ORDERS_SALESMAN_9 TO marcelene.boyer;
-GRANT SELECT ON ORDERS_SALESMAN_10 TO venita.daniel;
+GRANT SELECT ON ORDERS_SALESMAN_2 TO mireya_copeland;
+GRANT SELECT ON ORDERS_SALESMAN_3 TO genna_serrano;
+GRANT SELECT ON ORDERS_SALESMAN_4 TO virgie_wiggins;
+GRANT SELECT ON ORDERS_SALESMAN_8 TO jannette_david;
+GRANT SELECT ON ORDERS_SALESMAN_9 TO marcelene_boyer;
+GRANT SELECT ON ORDERS_SALESMAN_10 TO venita_daniel;
 
 ----------------------------
 -- Customer orders policy --
@@ -93,8 +93,8 @@ FROM ORDERS
 WHERE customer_id = 2
 ORDER BY order_date;
 
-GRANT SELECT ON ORDERS_CUSTOMER_1 TO debra.burks;
-GRANT SELECT ON ORDERS_CUSTOMER_2 TO kasha.todd;
+GRANT SELECT ON ORDERS_CUSTOMER_1 TO debra_burks;
+GRANT SELECT ON ORDERS_CUSTOMER_2 TO kasha_todd;
 
 --------------------------
 -- Product cost policy --
@@ -107,12 +107,12 @@ ORDER BY product_name;
 
 -- juniors and seniors
 GRANT SELECT ON PRODUCT_WO_COST TO
-    genna.serrano, virgie.wiggins, madeleine.norton, gabriel.howells,
-        marcelene.boyer, venita.daniel, zoe.mellor, charlie.knight;
+    genna_serrano, virgie_wiggins, madeleine_norton, gabriel_howells,
+        marcelene_boyer, venita_daniel, zoe_mellor, charlie_knight;
 
 -- managers
 GRANT SELECT ON PRODUCTS TO
-    fabiola.jackson, mireya.copeland, eve.randall, jannette.david, isobel.price;
+    fabiola_jackson, mireya_copeland, eve_randall, jannette_david, isobel_price;
 
 -------------------
 -- Stocks policy --
@@ -132,16 +132,16 @@ WHERE s.store_id = 2;
 
 -- juniors store 1
 GRANT SELECT ON STOCKS_STORE_1 TO
-    virgie.wiggins, gabriel.howells;
+    virgie_wiggins, gabriel_howells;
 
 -- juniors store 2
 GRANT SELECT ON STOCKS_STORE_2 TO
-    venita.daniel, charlie.knight;
+    venita_daniel, charlie_knight;
 
 -- seniors and above
 GRANT SELECT ON STOCKS TO
-    fabiola.jackson, mireya.copeland, genna.serrano, eve.randall, madeleine.norton,
-        jannette.david, marcelene.boyer, isobel.price, zoe.mellor;
+    fabiola_jackson, mireya_copeland, genna_serrano, eve_randall, madeleine_norton,
+        jannette_david, marcelene_boyer, isobel_price, zoe_mellor;
 
 --------------------------
 -- New products policy --
@@ -149,11 +149,11 @@ GRANT SELECT ON STOCKS TO
 
 -- warehousemen
 GRANT SELECT, UPDATE, INSERT ON CATEGORIES TO
-    eve.randall, madeleine.norton, gabriel.howells,
-        isobel.price, zoe.mellor, charlie.knight;
+    eve_randall, madeleine_norton, gabriel_howells,
+        isobel_price, zoe_mellor, charlie_knight;
 GRANT SELECT, UPDATE, INSERT ON BRANDS TO
-    eve.randall, madeleine.norton, gabriel.howells,
-        isobel.price, zoe.mellor, charlie.knight;
+    eve_randall, madeleine_norton, gabriel_howells,
+        isobel_price, zoe_mellor, charlie_knight;
 GRANT SELECT, UPDATE, INSERT ON PRODUCTS TO
-    eve.randall, madeleine.norton, gabriel.howells,
-        isobel.price, zoe.mellor, charlie.knight;
+    eve_randall, madeleine_norton, gabriel_howells,
+        isobel_price, zoe_mellor, charlie_knight;

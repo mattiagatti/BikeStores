@@ -15,11 +15,11 @@ END;
 
 CREATE OR REPLACE PACKAGE BODY set_staff_ctx_pkg IS
     PROCEDURE set_staff
-    IS
-        username VARCHAR2(200);
-        staff_id STAFFS.staff_id% TYPE;
+        IS
+        username   VARCHAR2(200);
+        staff_id   STAFFS.staff_id% TYPE;
         role_level STAFFS.role_level% TYPE;
-        store_id STAFFS.store_id% TYPE;
+        store_id   STAFFS.store_id% TYPE;
     BEGIN
         username := SYS_CONTEXT('USERENV', 'SESSION_USER');
         SELECT STAFFS.staff_id, STAFFS.role_level, STAFFS.store_id
@@ -37,7 +37,8 @@ END;
 /
 
 CREATE OR REPLACE TRIGGER set_staff_ctx_trig
-    AFTER LOGON ON DATABASE
+    AFTER LOGON
+    ON DATABASE
 BEGIN
     set_staff_ctx_pkg.set_staff;
 EXCEPTION
@@ -55,12 +56,12 @@ GRANT SELECT ON STAFFS TO
 CREATE OR REPLACE FUNCTION staff_privacy(
     schema_var VARCHAR2,
     table_var VARCHAR2)
-RETURN VARCHAR2
-IS
+    RETURN VARCHAR2
+    IS
     return_val VARCHAR2(400);
     role_level STAFFS.role_level% TYPE;
-    store_id STAFFS.store_id% TYPE;
-    BEGIN
+    store_id   STAFFS.store_id% TYPE;
+BEGIN
     role_level := SYS_CONTEXT('staff_ctx', 'role_level');
     IF role_level > 2 THEN
         return_val := '1=1';
@@ -68,19 +69,19 @@ IS
         store_id := SYS_CONTEXT('staff_ctx', 'store_id');
         return_val := 'active=1 AND store_id=' || store_id;
     END IF;
-RETURN return_val;
+    RETURN return_val;
 END staff_privacy;
 /
 
 BEGIN
-SYS.DBMS_RLS.ADD_POLICY
-(
-    OBJECT_SCHEMA => 'ADMIN',
-    OBJECT_NAME => 'STAFFS',
-    POLICY_NAME => 'VPD_staff_privacy',
-    FUNCTION_SCHEMA => 'ADMIN',
-    POLICY_FUNCTION => 'staff_privacy'
-);
+    SYS.DBMS_RLS.ADD_POLICY
+        (
+            OBJECT_SCHEMA => 'ADMIN',
+            OBJECT_NAME => 'STAFFS',
+            POLICY_NAME => 'VPD_staff_privacy',
+            FUNCTION_SCHEMA => 'ADMIN',
+            POLICY_FUNCTION => 'staff_privacy'
+        );
 END;
 /
 
@@ -91,32 +92,32 @@ END;
 CREATE OR REPLACE FUNCTION mask_salary(
     schema_var VARCHAR2,
     table_var VARCHAR2)
-RETURN VARCHAR2
-IS
+    RETURN VARCHAR2
+    IS
     return_val VARCHAR2(400);
     role_level STAFFS.role_level% TYPE;
-    BEGIN
+BEGIN
     role_level := SYS_CONTEXT('staff_ctx', 'role_level');
     IF role_level > 2 THEN
         return_val := '1=1';
     ELSE
         return_val := 'salary = NULL';
     END IF;
-RETURN return_val;
+    RETURN return_val;
 END mask_salary;
 /
 
 BEGIN
-SYS.DBMS_RLS.ADD_POLICY
-(
-    OBJECT_SCHEMA => 'ADMIN',
-    OBJECT_NAME => 'STAFFS',
-    POLICY_NAME => 'VPD_mask_salary',
-    FUNCTION_SCHEMA => 'ADMIN',
-    POLICY_FUNCTION => 'mask_salary',
-    SEC_RELEVANT_COLS => 'salary',
-    SEC_RELEVANT_COLS_OPT => dbms_rls.ALL_ROWS
-);
+    SYS.DBMS_RLS.ADD_POLICY
+        (
+            OBJECT_SCHEMA => 'ADMIN',
+            OBJECT_NAME => 'STAFFS',
+            POLICY_NAME => 'VPD_mask_salary',
+            FUNCTION_SCHEMA => 'ADMIN',
+            POLICY_FUNCTION => 'mask_salary',
+            SEC_RELEVANT_COLS => 'salary',
+            SEC_RELEVANT_COLS_OPT => dbms_rls.ALL_ROWS
+        );
 END;
 /
 
@@ -131,26 +132,26 @@ GRANT SELECT ON ORDERS TO
 CREATE OR REPLACE FUNCTION only_assigned(
     schema_var VARCHAR2,
     table_var VARCHAR2)
-RETURN VARCHAR2
-IS
+    RETURN VARCHAR2
+    IS
     return_val VARCHAR2(400);
-    staff_id STAFFS.staff_id% TYPE;
-    BEGIN
-        staff_id := SYS_CONTEXT('staff_ctx', 'staff_id');
-        return_val := 'ORDERS.staff_id = ' || staff_id;
-RETURN return_val;
+    staff_id   STAFFS.staff_id% TYPE;
+BEGIN
+    staff_id := SYS_CONTEXT('staff_ctx', 'staff_id');
+    return_val := 'ORDERS.staff_id = ' || staff_id;
+    RETURN return_val;
 END only_assigned;
 /
 
 BEGIN
-SYS.DBMS_RLS.ADD_POLICY
-(
-    OBJECT_SCHEMA =>'ADMIN',
-    OBJECT_NAME => 'ORDERS',
-    POLICY_NAME => 'VPD_only_assigned',
-    FUNCTION_SCHEMA =>'ADMIN',
-    POLICY_FUNCTION =>'only_assigned'
-);
+    SYS.DBMS_RLS.ADD_POLICY
+        (
+            OBJECT_SCHEMA =>'ADMIN',
+            OBJECT_NAME => 'ORDERS',
+            POLICY_NAME => 'VPD_only_assigned',
+            FUNCTION_SCHEMA =>'ADMIN',
+            POLICY_FUNCTION =>'only_assigned'
+        );
 END;
 /
 
@@ -165,11 +166,11 @@ GRANT SELECT ON STOCKS TO
 CREATE OR REPLACE FUNCTION stocks_filter(
     schema_var VARCHAR2,
     table_var VARCHAR2)
-RETURN VARCHAR2
-IS
+    RETURN VARCHAR2
+    IS
     return_val VARCHAR2(400);
     role_level STAFFS.role_level% TYPE;
-    store_id STAFFS.staff_id% TYPE;
+    store_id   STAFFS.staff_id% TYPE;
 BEGIN
     role_level := SYS_CONTEXT('staff_ctx', 'role_level');
     IF role_level > 1 THEN
@@ -178,18 +179,18 @@ BEGIN
         store_id := SYS_CONTEXT('staff_ctx', 'store_id');
         return_val := 'store_id=' || store_id;
     END IF;
-RETURN return_val;
+    RETURN return_val;
 END stocks_filter;
 /
 
 BEGIN
-SYS.DBMS_RLS.ADD_POLICY
-(
-    OBJECT_SCHEMA =>'ADMIN',
-    OBJECT_NAME => 'STOCKS',
-    POLICY_NAME => 'VPD_stocks_filter',
-    FUNCTION_SCHEMA =>'ADMIN',
-    POLICY_FUNCTION =>'stocks_filter'
-);
+    SYS.DBMS_RLS.ADD_POLICY
+        (
+            OBJECT_SCHEMA =>'ADMIN',
+            OBJECT_NAME => 'STOCKS',
+            POLICY_NAME => 'VPD_stocks_filter',
+            FUNCTION_SCHEMA =>'ADMIN',
+            POLICY_FUNCTION =>'stocks_filter'
+        );
 END;
 /
