@@ -60,6 +60,8 @@ END;
 
 -- 5) Authorizing Users for Label Security Policies
 
+GRANT SELECT ON PRODUCTS TO FABIOLA_JACKSON;
+
 BEGIN SA_USER_ADMIN.SET_LEVELS(
 policy_name => 'PROD_OLS_POL',
 user_name => 'FABIOLA_JACKSON',
@@ -69,6 +71,8 @@ def_level => 'S',
 row_level => 'P');
 END;
 /
+
+GRANT SELECT ON PRODUCTS TO VIRGIE_WIGGINS;
 
 BEGIN SA_USER_ADMIN.SET_LEVELS(
 policy_name => 'PROD_OLS_POL',
@@ -100,8 +104,8 @@ END;
 /
 
 UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('PROD_OLS_POL','P')
-WHERE list_price > 0;
+WHERE list_price != -1;
 
 -- Prototypes
 UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('PROD_OLS_POL','S')
-WHERE list_price = 0;
+WHERE list_price = -1;

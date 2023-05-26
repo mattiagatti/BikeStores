@@ -41,11 +41,14 @@ VALUES (7, 'Road Bikes');
 -- PRODUCTS
 
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price)
-VALUES (1, 'Trek 820 - 2016', 9, 6, 2016, 379.99);
+VALUES (1, 'Trek 820 - 2016', 9, 6, 2016, -1);
+-- VALUES (1, 'Trek 820 - 2016', 9, 6, 2016, 379.99);
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price)
-VALUES (2, 'Ritchey Timberwolf Frameset - 2016', 5, 6, 2016, 749.99);
+VALUES (2, 'Ritchey Timberwolf Frameset - 2016', 5, 6, 2016, -1);
+-- VALUES (2, 'Ritchey Timberwolf Frameset - 2016', 5, 6, 2016, 749.99);
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price)
-VALUES (3, 'Surly Wednesday Frameset - 2016', 8, 6, 2016, 999.99);
+VALUES (3, 'Surly Wednesday Frameset - 2016', 8, 6, 2016, -1);
+-- VALUES (3, 'Surly Wednesday Frameset - 2016', 8, 6, 2016, 999.99);
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price)
 VALUES (4, 'Trek Fuel EX 8 29 - 2016', 9, 6, 2016, 2899.99);
 INSERT INTO products(product_id, product_name, brand_id, category_id, model_year, list_price)
