@@ -57,6 +57,7 @@ label_tag => 2100,
 label_value => 'S',
 data_label => TRUE);
 END;
+/
 
 -- 5) Authorizing Users for Label Security Policies
 
