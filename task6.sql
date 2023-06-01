@@ -43,7 +43,7 @@ END;
 
 BEGIN
 SA_LABEL_ADMIN.CREATE_LABEL (
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 label_tag => 1100,
 label_value => 'P',
 data_label => TRUE);
@@ -52,7 +52,7 @@ END;
 
 BEGIN
 SA_LABEL_ADMIN.CREATE_LABEL (
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 label_tag => 2100,
 label_value => 'S',
 data_label => TRUE);
@@ -64,7 +64,7 @@ END;
 GRANT SELECT ON PRODUCTS TO FABIOLA_JACKSON;
 
 BEGIN SA_USER_ADMIN.SET_LEVELS(
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 user_name => 'FABIOLA_JACKSON',
 max_level => 'S',
 min_level => 'P',
@@ -76,7 +76,7 @@ END;
 GRANT SELECT ON PRODUCTS TO VIRGIE_WIGGINS;
 
 BEGIN SA_USER_ADMIN.SET_LEVELS(
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 user_name => 'VIRGIE_WIGGINS',
 max_level => 'P',
 min_level => 'P',
@@ -88,7 +88,7 @@ END;
 -- 6) Apply the Policy to a Database Table
 
 BEGIN SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 schema_name => 'ADMIN',
 table_name => 'PRODUCTS');
 END;
@@ -98,15 +98,15 @@ END;
 
 BEGIN
 SA_USER_ADMIN.SET_USER_PRIVS (
-policy_name => 'PROD_OLS_POL',
+policy_name => 'Prod_OLS_POL',
 user_name => 'ADMIN',
 privileges => 'FULL');
 END;
 /
 
-UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('PROD_OLS_POL','P')
+UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('Prod_OLS_POL','P')
 WHERE list_price != -1;
 
 -- Prototypes
-UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('PROD_OLS_POL','S')
+UPDATE admin.products SET OLS_COL = CHAR_TO_LABEL('Prod_OLS_POL','S')
 WHERE list_price = -1;
